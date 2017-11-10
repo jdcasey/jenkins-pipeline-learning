@@ -1,8 +1,7 @@
 stage('test playbook'){
 	node{
-	    echo sh(returnStdout: true, script: 'env')
-	    echo sh(returnStdout: true, script: 'ls -R ../${JOB_NAME}@script')
-	//	ansiblePlaybook(playbook: '../${JOB_NAME}@script/playbooks/test.yml')
-		ansiblePlaybook(playbook: 'playbooks/test.yml')
+	    echo sh 'env'
+	    echo sh 'ls -R ../${JOB_NAME}@script'
+		ansiblePlaybook(playbook: '../${JOB_NAME}@script/playbooks/test.yml')
 	}
 }
