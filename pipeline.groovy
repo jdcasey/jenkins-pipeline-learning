@@ -1,4 +1,4 @@
 @Library('ansible')
-node('master'){
+node{
 	ansiblePlaybook playbook='playbooks/test.yml'
 }
