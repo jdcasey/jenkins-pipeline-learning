@@ -1,4 +1,5 @@
 node{
     echo sh(returnStdout: true, script: 'env')
-	ansiblePlaybook playbook='../${JOB_NAME}@script/playbooks/test.yml'
+    echo sh(returnStdout: true, script: 'ls -R ../${JOB_NAME}@script')
+	ansiblePlaybook(playbook: '../${JOB_NAME}@script/playbooks/test.yml')
 }
