@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  tasks:
+    - name: whoami
+      shell: whoami
+      register: name
+    - name: debug name
+      debug:
+        msg: '{{ name.stdout }}'
